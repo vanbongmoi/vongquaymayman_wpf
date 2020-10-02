@@ -1,0 +1,115 @@
+G:\Project\EXBlend\taken6\taken6\obj\Debug\MainWindow.baml
+G:\Project\EXBlend\taken6\taken6\obj\Debug\MainWindow.g.cs
+G:\Project\EXBlend\taken6\taken6\obj\Debug\App.g.cs
+G:\Project\EXBlend\taken6\taken6\obj\Debug\taken6_MarkupCompile.cache
+G:\Project\EXBlend\taken6\taken6\obj\Debug\taken6.g.resources
+G:\Project\EXBlend\taken6\taken6\bin\Debug\taken6.exe
+G:\Project\EXBlend\taken6\taken6\bin\Debug\taken6.pdb
+G:\Project\EXBlend\taken6\taken6\obj\Debug\taken6.exe
+G:\Project\EXBlend\taken6\taken6\obj\Debug\taken6.pdb
+G:\Project\EXBlend\taken6\taken6\bin\Debug\music\insertcoin.mp3
+G:\Project\EXBlend\taken6\taken6\bin\Debug\music\lazer.mp3
+G:\Project\EXBlend\taken6\taken6\obj\Debug\taken6_Content.g.cs
+G:\Project\EXBlend\taken6\taken6\bin\Debug\images\background.png
+F:\Project\EXBlend\taken6\taken6\bin\Debug\music\insertcoin.mp3
+F:\Project\EXBlend\taken6\taken6\bin\Debug\music\lazer.mp3
+F:\Project\EXBlend\taken6\taken6\bin\Debug\images\background.png
+F:\Project\EXBlend\taken6\taken6\bin\Debug\taken6.exe
+F:\Project\EXBlend\taken6\taken6\bin\Debug\taken6.pdb
+F:\Project\EXBlend\taken6\taken6\obj\Debug\MainWindow.baml
+F:\Project\EXBlend\taken6\taken6\obj\Debug\MainWindow.g.cs
+F:\Project\EXBlend\taken6\taken6\obj\Debug\App.g.cs
+F:\Project\EXBlend\taken6\taken6\obj\Debug\taken6_Content.g.cs
+F:\Project\EXBlend\taken6\taken6\obj\Debug\taken6_MarkupCompile.cache
+F:\Project\EXBlend\taken6\taken6\obj\Debug\taken6.g.resources
+F:\Project\EXBlend\taken6\taken6\obj\Debug\taken6.exe
+F:\Project\EXBlend\taken6\taken6\obj\Debug\taken6.pdb
+F:\Project\EXBlend\taken6\taken6\bin\Debug\images\huongdantinidiem_fruitlife.png
+F:\Project\EXBlend\taken6\taken6\bin\Debug\music\amthanhtradiem.mp3
+F:\Project\EXBlend\taken6\taken6\bin\Debug\music\playing.mp3
+F:\Project\EXBlend\taken6\taken6\bin\Debug\music\demo.mp3
+F:\Project\EXBlend\taken6\taken6\bin\Debug\music\YAY.mp3
+F:\Project\EXBlend\letgojungle\taken6\obj\Debug\taken6.exe
+F:\Project\EXBlend\letgojungle\taken6\obj\Debug\taken6.pdb
+F:\Project\EXBlend\letgojungle\taken6\obj\Debug\MainWindow.baml
+F:\Project\EXBlend\letgojungle\taken6\obj\Debug\MainWindow.g.cs
+F:\Project\EXBlend\letgojungle\taken6\obj\Debug\App.g.cs
+F:\Project\EXBlend\letgojungle\taken6\obj\Debug\taken6_Content.g.cs
+F:\Project\EXBlend\letgojungle\taken6\obj\Debug\taken6_MarkupCompile.cache
+F:\Project\EXBlend\letgojungle\taken6\obj\Debug\taken6.g.resources
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\music\amthanhtradiem.mp3
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\music\insertcoin.mp3
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\music\lazer.mp3
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\music\YAY.mp3
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\taken6.exe
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\taken6.pdb
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\images\bg_ok_ok-03.png
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\music\INTRO SOUND EFFECT.mp3
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\music\OMG WHO THE HELL CARES.mp3
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\music\SUPER HOT FIRE OOOHHH.mp3
+F:\Project\EXBlend\letgojungle\taken6\bin\Debug\music\Pollo_Loko.mp3
+D:\letgojungle\taken6\bin\Debug\music\amthanhtradiem.mp3
+D:\letgojungle\taken6\bin\Debug\music\insertcoin.mp3
+D:\letgojungle\taken6\bin\Debug\music\INTRO SOUND EFFECT.mp3
+D:\letgojungle\taken6\bin\Debug\music\lazer.mp3
+D:\letgojungle\taken6\bin\Debug\music\OMG WHO THE HELL CARES.mp3
+D:\letgojungle\taken6\bin\Debug\music\Pollo_Loko.mp3
+D:\letgojungle\taken6\bin\Debug\music\SUPER HOT FIRE OOOHHH.mp3
+D:\letgojungle\taken6\bin\Debug\music\YAY.mp3
+D:\letgojungle\taken6\bin\Debug\taken6.exe
+D:\letgojungle\taken6\bin\Debug\taken6.pdb
+D:\letgojungle\taken6\obj\Debug\MainWindow.baml
+D:\letgojungle\taken6\obj\Debug\MainWindow.g.cs
+D:\letgojungle\taken6\obj\Debug\App.g.cs
+D:\letgojungle\taken6\obj\Debug\taken6_Content.g.cs
+D:\letgojungle\taken6\obj\Debug\taken6_MarkupCompile.cache
+D:\letgojungle\taken6\obj\Debug\taken6.g.resources
+D:\letgojungle\taken6\obj\Debug\taken6.exe
+D:\letgojungle\taken6\obj\Debug\taken6.pdb
+D:\letgojungle\taken6\bin\Debug\images\background_ok.png
+D:\letgojungle\taken6\bin\Debug\images\mouse.png
+D:\letgojungle\taken6\bin\Debug\images\vongquay.png
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\music\amthanhtradiem.mp3
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\music\insertcoin.mp3
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\music\INTRO SOUND EFFECT.mp3
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\music\lazer.mp3
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\music\OMG WHO THE HELL CARES.mp3
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\music\Pollo_Loko.mp3
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\music\SUPER HOT FIRE OOOHHH.mp3
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\music\YAY.mp3
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\images\background_ok.png
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\images\mouse.png
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\images\vongquay.png
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\taken6.exe
+C:\Users\5Minu\Desktop\letgojungle\taken6\bin\Debug\taken6.pdb
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\MainWindow.baml
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\MainWindow.g.cs
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\App.g.cs
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\taken6_Content.g.cs
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\taken6_MarkupCompile.cache
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\taken6.g.resources
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\taken6.csproj.CoreCompileInputs.cache
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\taken6.exe
+C:\Users\5Minu\Desktop\letgojungle\taken6\obj\Debug\taken6.pdb
+E:\NAmdataa\letgojungle\taken6\bin\Debug\music\amthanhtradiem.mp3
+E:\NAmdataa\letgojungle\taken6\bin\Debug\music\insertcoin.mp3
+E:\NAmdataa\letgojungle\taken6\bin\Debug\music\INTRO SOUND EFFECT.mp3
+E:\NAmdataa\letgojungle\taken6\bin\Debug\music\lazer.mp3
+E:\NAmdataa\letgojungle\taken6\bin\Debug\music\OMG WHO THE HELL CARES.mp3
+E:\NAmdataa\letgojungle\taken6\bin\Debug\music\Pollo_Loko.mp3
+E:\NAmdataa\letgojungle\taken6\bin\Debug\music\SUPER HOT FIRE OOOHHH.mp3
+E:\NAmdataa\letgojungle\taken6\bin\Debug\music\YAY.mp3
+E:\NAmdataa\letgojungle\taken6\bin\Debug\taken6.exe
+E:\NAmdataa\letgojungle\taken6\bin\Debug\taken6.pdb
+E:\NAmdataa\letgojungle\taken6\obj\Debug\MainWindow.baml
+E:\NAmdataa\letgojungle\taken6\obj\Debug\MainWindow.g.cs
+E:\NAmdataa\letgojungle\taken6\obj\Debug\App.g.cs
+E:\NAmdataa\letgojungle\taken6\obj\Debug\taken6_Content.g.cs
+E:\NAmdataa\letgojungle\taken6\obj\Debug\taken6_MarkupCompile.cache
+E:\NAmdataa\letgojungle\taken6\obj\Debug\taken6.g.resources
+E:\NAmdataa\letgojungle\taken6\obj\Debug\taken6.csproj.CoreCompileInputs.cache
+E:\NAmdataa\letgojungle\taken6\obj\Debug\taken6.exe
+E:\NAmdataa\letgojungle\taken6\obj\Debug\taken6.pdb
+E:\NAmdataa\letgojungle\taken6\obj\Debug\taken6_MarkupCompile.lref
+E:\NAmdataa\letgojungle\taken6\obj\Debug\Window1.g.cs
+E:\NAmdataa\letgojungle\taken6\obj\Debug\Window1.baml

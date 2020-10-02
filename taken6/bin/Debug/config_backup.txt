@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Cauhinh>
+    <Thoigian>15</Thoigian>
+    <Xu>0</Xu>
+    <bonus>200</bonus>
+    <numofbonus>39</numofbonus>
+    <playtime>2</playtime>
+    <countplay>0</countplay>
+  </Cauhinh>
+</Root>

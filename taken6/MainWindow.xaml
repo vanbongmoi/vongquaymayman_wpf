@@ -1,0 +1,953 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="taken6.MainWindow"
+	x:Name="Window"
+	Title="Letsgojungle"
+	Width="1920" Height="1080" Loaded="winload" KeyDown="nhanphim" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" AllowsTransparency="True" Cursor="None" Topmost="True">
+    <Window.Resources>
+        <Storyboard x:Key="bonus">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(GradientBrush.GradientStops)[1].(GradientStop.Offset)" Storyboard.TargetName="lblbonus_Copy" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(RadialGradientBrush.RadiusX)" Storyboard.TargetName="lblbonus_Copy">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.674"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(RadialGradientBrush.RadiusY)" Storyboard.TargetName="lblbonus_Copy">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.674"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(GradientBrush.GradientStops)[0].(GradientStop.Offset)" Storyboard.TargetName="lblbonus_Copy">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0.965"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblbonus" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblbonus" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="lblbonus" RepeatBehavior="Forever">
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="Red"/>
+                <EasingColorKeyFrame KeyTime="0:0:2" Value="#FF00DE4A"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardcoin">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblcoin" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblcoin" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblcoin_Copy" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblcoin_Copy" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.3"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <VisualBrush x:Key="imgcanvas" Visual="{Binding ElementName=imgcanvas}"/>
+        <Storyboard x:Key="Storyboardtapthe">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="checkicon" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="card" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-338"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-60"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="card" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-152"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_6000" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardbtn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="image" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.223"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.734"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="image" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.223"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.734"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-22.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-6"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="ellipse2" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.136"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.027"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="ellipse2" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.136"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.027"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse2" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label" RepeatBehavior="Forever">
+                <EasingColorKeyFrame KeyTime="0" Value="Red"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF001BFF"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboard1"/>
+        <VisualBrush x:Key="canvasgamename" Visual="{Binding ElementName=canvasgamename}"/>
+        <VisualBrush x:Key="canvasgamename1" Visual="{Binding ElementName=canvasgamename}" TileMode="Tile"/>
+        <VisualBrush x:Key="hinhsosanh" Visual="{Binding ElementName=hinhsosanh}"/>
+        <Storyboard x:Key="Storyboardgun">
+            <MediaTimeline Source="music/lazer.mp3" Storyboard.TargetName="lazer_mp3" d:DesignTimeNaturalDuration="1.071"/>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardtradiem">
+            <MediaTimeline Source="music/amthanhtradiem.mp3" Storyboard.TargetName="amthanhtradiem_mp3" d:DesignTimeNaturalDuration="3.3099374999999998"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="canvas">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-719.092"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:5" Value="409.9"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardthemxu">
+            <MediaTimeline Source="music/insertcoin.mp3" Storyboard.TargetName="insertcoin_mp3" d:DesignTimeNaturalDuration="2.06365"/>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardsoundtradiem">
+            <MediaTimeline Source="music/amthanhtradiem.mp3" Storyboard.TargetName="amthanhtradiem_mp1" d:DesignTimeNaturalDuration="3.3099374999999998"/>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardmegabonus">
+            <MediaTimeline Source="music/YAY.mp3" Storyboard.TargetName="YAY_mp3" d:DesignTimeNaturalDuration="5.6234861999999994"/>
+            <MediaTimeline BeginTime="0:0:5.8" Source="music/OMG WHO THE HELL CARES.mp3" Storyboard.TargetName="OMG_WHO_THE_HELL_CARES_mp3" d:DesignTimeNaturalDuration="9.1738775"/>
+            <MediaTimeline BeginTime="0:0:9.2" Source="music/SUPER HOT FIRE OOOHHH.mp3" Storyboard.TargetName="SUPER_HOT_FIRE_OOOHHH_mp3" d:DesignTimeNaturalDuration="5.0189781"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="coincanvas">
+                <EasingDoubleKeyFrame KeyTime="0:0:6.3" Value="21"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="bonusbong">
+                <EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="564"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="bonusbong">
+                <EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="473"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="bonusbong">
+                <EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="bonusbong">
+                <EasingDoubleKeyFrame KeyTime="0:0:5.1" Value="2"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardtam"/>
+        <Storyboard x:Key="Storyboardtamten">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tamten" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.995"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardplaying">
+            <MediaTimeline Source="music/INTRO SOUND EFFECT.mp3" Storyboard.TargetName="INTRO_SOUND_EFFECT_mp3" d:DesignTimeNaturalDuration="14.8114285" RepeatBehavior="Forever"/>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardmusicdemo">
+            <MediaTimeline Source="music/Pollo_Loko.mp3" Storyboard.TargetName="Pollo_Loko_mp3" d:DesignTimeNaturalDuration="189.36159999999998" RepeatBehavior="Forever"/>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(MediaElement.Volume)" Storyboard.TargetName="Pollo_Loko_mp3">
+                <EasingDoubleKeyFrame KeyTime="0" Value="100"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardnhay">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="phinhan" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="14"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="46"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="14"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Dao" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-99.787"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-129.787"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardblinkdemo">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tbldemo" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="tbldemo">
+                <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="Red"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.8" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.1" Value="White"/>
+                <EasingColorKeyFrame KeyTime="0:0:1.3" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <VisualBrush x:Key="bonuscanvas" Visual="{Binding ElementName=bonusbong}"/>
+        <Storyboard x:Key="Storyboardmohopqua">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="canvashopqua">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="270"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="canvashopqua">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1.3333333333333333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="canvashopqua">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1.3333333333333333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardbanten">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="canvas_dao">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="35.15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-21.151"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="canvas_dao">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-455.681"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-760.661"/>
+            </DoubleAnimationUsingKeyFrames>
+            <Rotation3DAnimationUsingKeyFrames Storyboard.TargetProperty="(Camera.Transform).(Transform3DGroup.Children)[2].(RotateTransform3D.Rotation)" Storyboard.TargetName="perspectiveCamera">
+                <EasingRotation3DKeyFrame KeyTime="0:0:0.2">
+                    <EasingRotation3DKeyFrame.Value>
+                        <AxisAngleRotation3D Axis="-0.739,0.642,0.203" Angle="13.706"/>
+                    </EasingRotation3DKeyFrame.Value>
+                </EasingRotation3DKeyFrame>
+                <EasingRotation3DKeyFrame KeyTime="0:0:0.3">
+                    <EasingRotation3DKeyFrame.Value>
+                        <AxisAngleRotation3D Axis="-0.561,0.341,0.754" Angle="23.794"/>
+                    </EasingRotation3DKeyFrame.Value>
+                </EasingRotation3DKeyFrame>
+            </Rotation3DAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="tamten">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-3.47"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="tamten">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="18.351"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Camera.Transform).(Transform3DGroup.Children)[4].(TranslateTransform3D.OffsetX)" Storyboard.TargetName="perspectiveCamera">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Camera.Transform).(Transform3DGroup.Children)[4].(TranslateTransform3D.OffsetZ)" Storyboard.TargetName="perspectiveCamera">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Camera.Transform).(Transform3DGroup.Children)[1].(ScaleTransform3D.ScaleX)" Storyboard.TargetName="perspectiveCamera">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Camera.Transform).(Transform3DGroup.Children)[1].(ScaleTransform3D.ScaleY)" Storyboard.TargetName="perspectiveCamera">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Camera.Transform).(Transform3DGroup.Children)[1].(ScaleTransform3D.ScaleZ)" Storyboard.TargetName="perspectiveCamera">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.05"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="phitieu">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="69.695"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="phitieu">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.906"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="phitieu">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="15.278"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="phitieu">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-1.089"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboardwaiting">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock" RepeatBehavior="Forever">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <ImageBrush x:Key="ImageBrush1" ImageSource="images/hoahoa.jpg"/>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource bonus}"/>
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+            <BeginStoryboard Storyboard="{StaticResource Storyboardtamten}"/>
+            <BeginStoryboard Storyboard="{StaticResource Storyboardwaiting}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid x:Name="LayoutRoot" Width="1920" Height="1080">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.069*"/>
+            <RowDefinition Height="0.094*"/>
+            <RowDefinition Height="0.837*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.309*"/>
+            <ColumnDefinition Width="0.088*"/>
+            <ColumnDefinition Width="0.077*"/>
+            <ColumnDefinition Width="0.209*"/>
+            <ColumnDefinition Width="0.317*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="background" Grid.ColumnSpan="5" Margin="0" Grid.RowSpan="3" Stretch="Fill" Source="images/bg_ok_ok-03.png"/>
+        <Canvas x:Name="tenmaygame" Grid.ColumnSpan="2" Margin="-167.21,-53.184,-132.994,0" Grid.Column="1" Opacity="0.585" Grid.Row="2" Height="139.484" VerticalAlignment="Top">
+            <Canvas x:Name="canvasgamename" Height="130.8" Canvas.Left="172" Canvas.Top="-20" Width="492.116"/>
+        </Canvas>
+        <Canvas x:Name="timecanvas" Margin="0,0,0,-67.966" Height="215.046" VerticalAlignment="Bottom" Grid.RowSpan="2" HorizontalAlignment="Left" Width="280.926">
+            <Ellipse x:Name="ellipse1_Copy" Stroke="#FF08FF00" Height="220" Canvas.Left="28" Width="220" Canvas.Top="-4.954" StrokeThickness="5">
+                <Ellipse.Fill>
+                    <RadialGradientBrush GradientOrigin="0.506,0.024">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FFC6431C" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label x:Name="lbltime" Content="Time" FontSize="53.333" Foreground="White" TextOptions.TextFormattingMode="Display" Background="#00000000" FontFamily="Cooper Std Black" Height="88.192" Width="172" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="56" Canvas.Top="23"/>
+            <Label x:Name="lblcountdown" Content="" FontSize="96" Foreground="#FF0079FF" Height="133.808" FontFamily="Segoe UI Black" FontWeight="Bold" TextOptions.TextFormattingMode="Display" Canvas.Top="66.192" Width="172" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="56"/>
+        </Canvas>
+        <Canvas x:Name="ticketcanvas" Margin="0,0,-5.656,-67.966" Height="215.046" VerticalAlignment="Bottom" Grid.Column="4" Grid.RowSpan="2" HorizontalAlignment="Right" Width="281.166">
+            <Ellipse x:Name="ellipse1" Stroke="#FF08FF00" Height="220" Canvas.Left="28" Width="220" Canvas.Top="-4.954" StrokeThickness="5">
+                <Ellipse.Fill>
+                    <RadialGradientBrush GradientOrigin="0.506,0.024">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FFC63717" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label x:Name="lblscore" Content="" FontSize="96" Foreground="#FF0079FF" FontWeight="Bold" FontFamily="Segoe UI Black" HorizontalAlignment="Right" Width="213.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="131.684" Canvas.Left="32" Canvas.Top="67.362"/>
+            <Label x:Name="lblscore_Copy" Content="Ticket" FontSize="53.333" Foreground="White" FontFamily="Cooper Std Black" Width="209.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="131.684" Canvas.Left="36" Canvas.Top="11"/>
+        </Canvas>
+        <Canvas x:Name="coincanvas" Height="197.408" Margin="183.715,0,-8.935,50.967" Grid.Row="2" VerticalAlignment="Bottom" Grid.Column="3" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Label x:Name="lblcoin" Content="" FontSize="133.333" Foreground="#FFFDFF00" Height="170.965" FontFamily="Cooper Std Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="259.652" Canvas.Left="567.488" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" MinWidth="5" Canvas.Top="16.035">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="lblcoin_Copy" Content="Lượt chơi" FontSize="96" Foreground="#FFFDFF00" Height="195" Background="#00E70E0E" BorderThickness="5" FontFamily="Cooper Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="567.488" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="lblcoin_Copy1" Content="EASY PLAY" FontSize="96" Foreground="#FF12CB00" Height="171" Background="#0000D43A" BorderThickness="5" FontFamily="Cooper Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="673.488" RenderTransformOrigin="0.5,0.5" Canvas.Left="-1046" Canvas.Top="-606">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="lblcoin_Copy2" Content="MORE TICKET" FontSize="72" Foreground="#FFF14200" Height="141.548" Background="#00000000" BorderThickness="5" FontFamily="Cooper Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="557.488" RenderTransformOrigin="0.5,0.5" Canvas.Left="174" Canvas.Top="-591.274">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="lblcoin_Copy3" Content="MORE FUN" FontSize="72" Foreground="White" Height="141.548" Background="#00000000" BorderThickness="5" FontFamily="Cooper Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="557.488" RenderTransformOrigin="0.5,0.5" Canvas.Left="174" Canvas.Top="-467.274">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </Canvas>
+        <MediaElement x:Name="OMG_WHO_THE_HELL_CARES_mp3" HorizontalAlignment="Left" Height="0" Stretch="Fill" VerticalAlignment="Top" Width="0" Volume="50"/>
+        <MediaElement x:Name="SUPER_HOT_FIRE_OOOHHH_mp3" HorizontalAlignment="Left" Height="0" Stretch="Fill" VerticalAlignment="Top" Width="0" Volume="100"/>
+        <Label x:Name="lblready" Content="9" Grid.Column="3" Margin="-105.564,170.408,0,0" FontSize="200" FontFamily="Cooper Std Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="248.808" VerticalAlignment="Top" Grid.Row="2" d:LayoutOverrides="VerticalAlignment" Background="#0000FF1B" Foreground="White" HorizontalAlignment="Left" Width="286.064" d:IsHidden="True"/>
+        <Label x:Name="lblready1" Content="Ready" Margin="-30.306,386.76,-15.098,292.502" FontSize="200" FontFamily="Broadway" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3" Grid.Column="1" Background="{x:Null}" Grid.Row="2" d:IsHidden="True">
+            <Label.Foreground>
+                <RadialGradientBrush GradientOrigin="1.129,0.461" RadiusY="0.569" RadiusX="0.569" SpreadMethod="Reflect" Center="0.492,0.561">
+                    <GradientStop Color="#FFFFDE00" Offset="1"/>
+                    <GradientStop Color="#FFFFA400" Offset="0.313"/>
+                    <GradientStop Color="#FFEFF100"/>
+                    <GradientStop Color="#FFFFA400" Offset="0.621"/>
+                </RadialGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Canvas x:Name="myhand" Grid.Column="4" Margin="163.324,0,235.784,244.467" Grid.Row="2" Height="207.47" VerticalAlignment="Bottom" d:IsHidden="True">
+            <Canvas x:Name="button" Height="152" Width="152" Canvas.Left="-15" Canvas.Top="-14">
+                <Ellipse Fill="#FF00FF04" Height="152" Stroke="Black" StrokeThickness="4" Width="152"/>
+                <Ellipse x:Name="ellipse2" Height="122" StrokeThickness="4" Canvas.Left="15" Canvas.Top="15" Width="122" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFF1FF00" Offset="1"/>
+                            <GradientStop Color="White"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse Fill="Red" Height="19.658" StrokeThickness="4" Canvas.Left="66.171" Canvas.Top="66.171" Width="19.658"/>
+                <Label x:Name="label" Content="Press Start" FontSize="48" Background="#FF683EE2" Foreground="White" FontFamily="Cooper Std Black" Height="66.5" Canvas.Top="-71.5" Width="313.416" Canvas.Left="-75.416" VerticalAlignment="Center" HorizontalAlignment="Center" FontStretch="Expanded"/>
+            </Canvas>
+            <Image x:Name="image" Source="images/fingers-157937_640.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="174.468" Width="148.57" Canvas.Left="60.962" Canvas.Top="33.002">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-40.099"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Canvas>
+        <Canvas x:Name="odiem" Grid.ColumnSpan="4" Grid.Column="1" Margin="166.324,0,450.316,27.315" Grid.Row="2" Height="293.408" VerticalAlignment="Bottom" d:IsHidden="True">
+            <Canvas Background="Black" Height="783.408" Canvas.Left="59" Width="294.692" Canvas.Top="-459">
+                <Canvas x:Name="canvas" Height="1224" Canvas.Left="86.906" Canvas.Top="-852.592" Width="115">
+                    <Image Height="400" Source="images/tinidiem.png" Stretch="Fill" Width="100" Canvas.Left="8" Canvas.Top="8"/>
+                    <Image Height="400" Source="images/tinidiem.png" Stretch="Fill" Width="100" Canvas.Top="408" Canvas.Left="8"/>
+                    <Image Height="400" Source="images/tinidiem.png" Stretch="Fill" Width="100" Canvas.Top="808" Canvas.Left="8"/>
+                    <MediaElement x:Name="amthanhtradiem_mp1" Height="0" Stretch="Fill" Width="0"/>
+                </Canvas>
+                <Rectangle Fill="#FFFF0C00" Height="37.5" Canvas.Left="85.906" Stroke="Black" Canvas.Top="299.408" Width="116"/>
+                <Rectangle Fill="Black" Height="765.408" Stroke="Black" Width="295.192" Canvas.Top="-463.061" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.326"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0.744"/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Label Content="ticket" Height="42" Canvas.Left="105.739" Canvas.Top="294.908" Width="80.5" Background="#00000000" Foreground="White" FontSize="26.667"/>
+                <Label Content="Play &#xa;and&#xa;Win" Height="271.108" Width="157.692" Canvas.Left="68.214" Background="#00FF0000" Foreground="Red" FontSize="64" FontWeight="Bold" FontStyle="Italic" Canvas.Top="-108"/>
+                <Label Content="Don't forget&#xa; your ticket" Height="133.8" Canvas.Left="20" Canvas.Top="177.608" Width="257.692" FontSize="42.667" Foreground="#FFF1FF00"/>
+            </Canvas>
+        </Canvas>
+        <TextBlock x:Name="tblerr" Grid.Column="4" Height="61.968" Margin="333.13,0,0,2.534" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="32" Foreground="#FF00FD78" HorizontalAlignment="Left" Width="155" TextAlignment="Center"><InlineUIContainer>
+				<MediaElement x:Name="demo_mp3" Height="0" Stretch="Fill" Width="0"/>
+			</InlineUIContainer></TextBlock>
+        <TextBlock x:Name="tblcountplay" Grid.Column="4" Height="40.433" Margin="501.64,0,0,5.534" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="24" Foreground="White" HorizontalAlignment="Left" Width="97" TextAlignment="Center"/>
+        <MediaElement x:Name="lazer_mp3" HorizontalAlignment="Left" Height="0" Stretch="Fill" VerticalAlignment="Top" Width="0"/>
+        <MediaElement x:Name="amthanhtradiem_mp3" HorizontalAlignment="Left" Height="0" Stretch="Fill" VerticalAlignment="Top" Width="0"/>
+        <MediaElement x:Name="insertcoin_mp3" HorizontalAlignment="Left" Height="0" Stretch="Fill" VerticalAlignment="Top" Width="0"/>
+        <Canvas x:Name="hinhtron" Margin="-44.909,-8.534,-15.098,354.773" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3" RenderTransformOrigin="0.467,0.498">
+            <Canvas x:Name="hinhgame" Height="739.919" Width="753.302" Canvas.Left="0" Canvas.Top="0" RenderTransformOrigin="0.478,0.485">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="3.368" Y="6.886"/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <Image x:Name="vongtron" Source="images/vongquay.png" Stretch="Fill" Width="700" Height="700" Canvas.Left="11.163" Canvas.Top="8.645"/>
+                <TextBlock x:Name="tblgroup11" Height="120.559" Canvas.Left="132.131" TextWrapping="Wrap" Canvas.Top="515.05" Width="140.734" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="39.043"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup12" Height="93.319" Canvas.Left="384.236" TextWrapping="Wrap" Canvas.Top="562.779" Width="140.734" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-30"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup13" Height="93.319" Canvas.Left="457.736" TextWrapping="Wrap" Canvas.Top="102.279" Width="140.734" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-150"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup14" Height="93.319" Canvas.Left="90.236" TextWrapping="Wrap" Canvas.Top="120.279" Width="140.734" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-225"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup31" Height="93.319" Canvas.Left="225.236" TextWrapping="Wrap" Canvas.Top="36.279" Width="140.734" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-196.901"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup32" Height="93.319" Canvas.Left="565.736" TextWrapping="Wrap" Canvas.Top="246.279" Width="140.734" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-105"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup6" Height="80.637" Canvas.Left="568.725" TextWrapping="Wrap" Canvas.Top="368.234" Width="112.22" FontSize="72" Text="?" Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-89.509"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup23" Height="167.231" Canvas.Left="529.609" TextWrapping="Wrap" Canvas.Top="422.98" Width="79.223" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-54.656"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup22" Height="167.231" Canvas.Left="363.109" TextWrapping="Wrap" Canvas.Top="26.98" Width="79.223" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-168.079"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup21" Height="167.231" Canvas.Left="67.609" TextWrapping="Wrap" Canvas.Top="230.98" Width="79.223" FontSize="72" Text=" " Foreground="White" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-255"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup4" Height="157.145" Canvas.Left="70.621" TextWrapping="Wrap" Canvas.Top="314.269" Width="79.223" FontSize="72" Text=" " Foreground="Red" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Opacity="0.975">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-278.519"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="tblgroup5" Height="244.329" Canvas.Left="111.748" TextWrapping="Wrap" Canvas.Top="326.508" Width="79.223" FontSize="72" Text=" " Foreground="Red" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontFamily="Stencil Std" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Opacity="0.975">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-293.735"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Rectangle Height="83" Canvas.Left="564.594" Stroke="White" Canvas.Top="371.648" Width="99.333" RadiusY="11.5" RadiusX="11.5" StrokeThickness="10"/>
+            </Canvas>
+        </Canvas>
+        <Canvas x:Name="tapthe" Grid.Column="2" Margin="68.5,250.908,16.786,137.967" Grid.Row="2" Grid.ColumnSpan="2" d:IsHidden="True">
+            <Canvas x:Name="nfctap" Height="205.5" Width="304.5">
+                <Rectangle Height="205.5" Fill="#FF03A5F9" RadiusY="26.698" RadiusX="26.698" Width="304.5"/>
+                <Rectangle Height="119.271" Fill="#FF080808" RadiusY="10.104" RadiusX="10.104" Canvas.Left="32.833" Canvas.Top="5.896" Width="239.579"/>
+                <Label x:Name="_6000" Content="" Height="72.771" Canvas.Left="81.198" Canvas.Top="32.229" Width="137.5" Foreground="#FFFFF500" FontFamily="Segoe UI Black" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Opacity="0"/>
+                <Label Content="tiNi World" Height="33.333" FontSize="16" Foreground="White" Canvas.Left="114.5" Canvas.Top="5.896" Width="81.531"/>
+                <Canvas x:Name="checkicon" Height="42.569" Width="105.04" Canvas.Left="105.182" Canvas.Top="57.931">
+                    <Path Data="M639.484,542.33333 L684,588.5" Fill="#FF03A5F9" Height="30.64" Stretch="Fill" Width="60.884" StrokeThickness="14" Stroke="#FF72F30B" RenderTransformOrigin="0.5,0.5" Canvas.Top="11.929">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="18.767"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path Data="M639.484,542.33333 L684,588.5" Fill="#FF03A5F9" Height="30.64" Stretch="Fill" Width="84.571" StrokeThickness="14" Stroke="#FF72F30B" RenderTransformOrigin="0.5,0.5" Canvas.Left="20.469">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-65.062"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Canvas>
+                <Canvas Height="57.031" Width="85.334" Opacity="0.8" Canvas.Left="105.182" Canvas.Top="132.167">
+                    <Canvas Height="66.833" Width="48.832">
+                        <Path Data="M666.78442,634.29918 C648.01474,649.16609 649.29917,671.63194 665.30042,687.13185" Height="66.833" Stretch="Fill" Stroke="White" StrokeThickness="9" Width="27.78"/>
+                        <Path Data="M666.78442,634.29918 C648.01474,649.16609 649.29917,671.63194 665.30042,687.13185" Height="45.833" Stretch="Fill" Stroke="White" StrokeThickness="9" Width="19.052" Canvas.Left="17.364" Canvas.Top="12"/>
+                        <Path Data="M666.78442,634.29918 C648.01474,649.16609 649.29917,671.63194 665.30042,687.13185" Height="31.399" Stretch="Fill" Stroke="White" StrokeThickness="9" Width="13.052" Canvas.Left="35.78" Canvas.Top="19.217"/>
+                    </Canvas>
+                    <Canvas Height="59.765" Width="43.668" RenderTransformOrigin="0.5,0.5" Canvas.Left="56.332" Canvas.Top="0.034">
+                        <Canvas.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="3.773"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Canvas.RenderTransform>
+                        <Path Data="M666.78442,634.29918 C648.01474,649.16609 649.29917,671.63194 665.30042,687.13185" Height="66.833" Stretch="Fill" Stroke="White" StrokeThickness="9" Width="27.78"/>
+                        <Path Data="M666.78442,634.29918 C648.01474,649.16609 649.29917,671.63194 665.30042,687.13185" Height="45.833" Stretch="Fill" Stroke="White" StrokeThickness="9" Width="19.052" Canvas.Left="17.364" Canvas.Top="12"/>
+                        <Path Data="M666.78442,634.29918 C648.01474,649.16609 649.29917,671.63194 665.30042,687.13185" Height="31.399" Stretch="Fill" Stroke="White" StrokeThickness="9" Width="13.052" Canvas.Left="35.78" Canvas.Top="19.217"/>
+                    </Canvas>
+                </Canvas>
+            </Canvas>
+            <Canvas x:Name="card" Height="177.066" Canvas.Left="340" Canvas.Top="230.875" Width="297.39" RenderTransformOrigin="0.5,0.5">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <Image Height="99.84" Source="images/NKID_Family-card85x55mm_layout-Final-FINAL-2511-op2-01-300x192.png" Stretch="Fill" Width="156" Canvas.Left="72" Canvas.Top="46.08"/>
+                <Image Source="images/580b585b2edbce24c47b29b1.png" Stretch="Fill" Height="178.968" Canvas.Left="170.422" Canvas.Top="68.032" Width="178.968"/>
+            </Canvas>
+        </Canvas>
+        <Viewport3D x:Name="phinhan" Margin="135.235,0,152.277,31.624" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Height="301.142" VerticalAlignment="Bottom">
+            <Viewport3D.Camera>
+                <PerspectiveCamera x:Name="perspectiveCamera1" FieldOfView="45" FarPlaneDistance="100" LookDirection="-11.59,1.552,-36.22" NearPlaneDistance="0.1" Position="9.905,-1.426,32.796" UpDirection="0.13,0.991,0.001">
+                    <PerspectiveCamera.Transform>
+                        <Transform3DGroup>
+                            <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                            <ScaleTransform3D ScaleZ="1" ScaleY="1"/>
+                            <RotateTransform3D d:EulerAngles="0,0,34">
+                                <RotateTransform3D.Rotation>
+                                    <AxisAngleRotation3D Axis="0,0,1" Angle="34"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                            <TranslateTransform3D OffsetZ="4" OffsetX="1" OffsetY="-1"/>
+                        </Transform3DGroup>
+                    </PerspectiveCamera.Transform>
+                </PerspectiveCamera>
+            </Viewport3D.Camera>
+            <Viewport3D.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-24.132"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Viewport3D.RenderTransform>
+            <ModelVisual3D x:Name="ModelContainer3">
+                <ModelVisual3D.Content>
+                    <GeometryModel3D x:Name="Model3" d:Bounds="-10.2586353636407,-10,0,20.5172707272815,20,0">
+                        <GeometryModel3D.Geometry>
+                            <MeshGeometry3D Normals="0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1" Positions="-10.258635,-10,0 -7.9789386,-10,0 -5.6992419,-10,0 -3.4195451,-10,0 -1.1398484,-10,0 1.1398484,-10,0 3.4195451,-10,0 5.6992419,-10,0 7.9789386,-10,0 10.258635,-10,0 -10.258635,-7.7777778,0 -7.9789386,-7.7777778,0 -5.6992419,-7.7777778,0
+-3.4195451,-7.7777778,0 -1.1398484,-7.7777778,0 1.1398484,-7.7777778,0 3.4195451,-7.7777778,0 5.6992419,-7.7777778,0 7.9789386,-7.7777778,0 10.258635,-7.7777778,0 -10.258635,-5.5555556,0 -7.9789386,-5.5555556,0 -5.6992419,-5.5555556,0 -3.4195451,-5.5555556,0 -1.1398484,-5.5555556,0 1.1398484,-5.5555556,0
+3.4195451,-5.5555556,0 5.6992419,-5.5555556,0 7.9789386,-5.5555556,0 10.258635,-5.5555556,0 -10.258635,-3.3333333,0 -7.9789386,-3.3333333,0 -5.6992419,-3.3333333,0 -3.4195451,-3.3333333,0 -1.1398484,-3.3333333,0 1.1398484,-3.3333333,0 3.4195451,-3.3333333,0 5.6992419,-3.3333333,0 7.9789386,-3.3333333,0
+10.258635,-3.3333333,0 -10.258635,-1.1111111,0 -7.9789386,-1.1111111,0 -5.6992419,-1.1111111,0 -3.4195451,-1.1111111,0 -1.1398484,-1.1111111,0 1.1398484,-1.1111111,0 3.4195451,-1.1111111,0 5.6992419,-1.1111111,0 7.9789386,-1.1111111,0 10.258635,-1.1111111,0 -10.258635,1.1111111,0 -7.9789386,1.1111111,0
+-5.6992419,1.1111111,0 -3.4195451,1.1111111,0 -1.1398484,1.1111111,0 1.1398484,1.1111111,0 3.4195451,1.1111111,0 5.6992419,1.1111111,0 7.9789386,1.1111111,0 10.258635,1.1111111,0 -10.258635,3.3333333,0 -7.9789386,3.3333333,0 -5.6992419,3.3333333,0 -3.4195451,3.3333333,0 -1.1398484,3.3333333,0
+1.1398484,3.3333333,0 3.4195451,3.3333333,0 5.6992419,3.3333333,0 7.9789386,3.3333333,0 10.258635,3.3333333,0 -10.258635,5.5555556,0 -7.9789386,5.5555556,0 -5.6992419,5.5555556,0 -3.4195451,5.5555556,0 -1.1398484,5.5555556,0 1.1398484,5.5555556,0 3.4195451,5.5555556,0 5.6992419,5.5555556,0
+7.9789386,5.5555556,0 10.258635,5.5555556,0 -10.258635,7.7777778,0 -7.9789386,7.7777778,0 -5.6992419,7.7777778,0 -3.4195451,7.7777778,0 -1.1398484,7.7777778,0 1.1398484,7.7777778,0 3.4195451,7.7777778,0 5.6992419,7.7777778,0 7.9789386,7.7777778,0 10.258635,7.7777778,0 -10.258635,10,0
+-7.9789386,10,0 -5.6992419,10,0 -3.4195451,10,0 -1.1398484,10,0 1.1398484,10,0 3.4195451,10,0 5.6992419,10,0 7.9789386,10,0 10.258635,10,0" TextureCoordinates="0,311.365 35.490889,311.365 70.981778,311.365 106.47267,311.365 141.96356,311.365 177.45444,311.365 212.94533,311.365 248.43622,311.365 283.92711,311.365 319.418,311.365 0,276.76889 35.490889,276.76889 70.981778,276.76889 106.47267,276.76889 141.96356,276.76889 177.45444,276.76889 212.94533,276.76889 248.43622,276.76889 283.92711,276.76889 319.418,276.76889 0,242.17278 35.490889,242.17278 70.981778,242.17278
+106.47267,242.17278 141.96356,242.17278 177.45444,242.17278 212.94533,242.17278 248.43622,242.17278 283.92711,242.17278 319.418,242.17278 0,207.57667 35.490889,207.57667 70.981778,207.57667 106.47267,207.57667 141.96356,207.57667 177.45444,207.57667 212.94533,207.57667 248.43622,207.57667 283.92711,207.57667 319.418,207.57667 0,172.98056 35.490889,172.98056 70.981778,172.98056 106.47267,172.98056 141.96356,172.98056 177.45444,172.98056
+212.94533,172.98056 248.43622,172.98056 283.92711,172.98056 319.418,172.98056 0,138.38444 35.490889,138.38444 70.981778,138.38444 106.47267,138.38444 141.96356,138.38444 177.45444,138.38444 212.94533,138.38444 248.43622,138.38444 283.92711,138.38444 319.418,138.38444 0,103.78833 35.490889,103.78833 70.981778,103.78833 106.47267,103.78833 141.96356,103.78833 177.45444,103.78833 212.94533,103.78833 248.43622,103.78833 283.92711,103.78833
+319.418,103.78833 0,69.192222 35.490889,69.192222 70.981778,69.192222 106.47267,69.192222 141.96356,69.192222 177.45444,69.192222 212.94533,69.192222 248.43622,69.192222 283.92711,69.192222 319.418,69.192222 0,34.596111 35.490889,34.596111 70.981778,34.596111 106.47267,34.596111 141.96356,34.596111 177.45444,34.596111 212.94533,34.596111 248.43622,34.596111 283.92711,34.596111 319.418,34.596111 0,0 35.490889,0
+70.981778,0 106.47267,0 141.96356,0 177.45444,0 212.94533,0 248.43622,0 283.92711,0 319.418,0" TriangleIndices="0 1 10 1 11 10 1 2 11 2 12 11 2 3 12 3 13 12 3 4 13 4 14 13 4 5 14 5 15 14 5 6 15 6 16 15 6 7 16 7 17 16 7 8 17 8 18 17 8 9 18 9 19 18 10 11 20 11 21 20 11 12 21 12 22 21 12 13 22 13 23 22 13 14 23 14 24 23 14 15 24 15 25 24 15 16 25 16 26 25 16 17 26 17 27 26 17 18 27 18 28 27 18 19 28 19 29 28 20 21 30 21 31 30 21 22 31 22 32 31 22 23 32 23 33 32 23 24 33 24 34 33 24 25 34 25 35 34 25 26 35 26 36 35 26 27 36 27 37 36 27 28 37 28 38 37 28 29 38 29 39 38 30 31 40 31 41 40 31 32 41 32 42 41 32 33 42 33 43 42 33 34 43 34 44 43 34 35 44 35 45 44 35 36 45 36 46 45 36 37 46 37 47 46 37 38 47 38 48 47 38 39 48 39 49 48 40 41 50 41 51 50 41 42 51 42 52 51 42 43 52 43 53 52 43 44 53 44 54 53 44 45 54 45 55 54 45 46 55 46 56 55 46 47 56 47 57 56 47 48 57 48 58 57 48 49 58 49 59 58 50 51 60 51 61 60 51 52 61 52 62 61 52 53 62 53 63 62 53 54 63 54 64 63 54 55 64 55 65 64 55 56 65 56 66 65 56 57 66 57 67 66 57 58 67 58 68 67 58 59 68 59 69 68 60 61 70 61 71 70 61 62 71 62 72 71 62 63 72 63 73 72 63 64 73 64 74 73 64 65 74 65 75 74 65 66 75 66 76 75 66 67 76 67 77 76 67 68 77 68 78 77 68 69 78 69 79 78 70 71 80 71 81 80 71 72 81 72 82 81 72 73 82 73 83 82 73 74 83 74 84 83 74 75 84 75 85 84 75 76 85 76 86 85 76 77 86 77 87 86 77 78 87 78 88 87 78 79 88 79 89 88 80 81 90 81 91 90 81 82 91 82 92 91 82 83 92 83 93 92 83 84 93 84 94 93 84 85 94 85 95 94 85 86 95 86 96 95 86 87 96 87 97 96 87 88 97 88 98 97 88 89 98 89 99 98"/>
+                        </GeometryModel3D.Geometry>
+                        <GeometryModel3D.Material>
+                            <DiffuseMaterial>
+                                <DiffuseMaterial.Brush>
+                                    <ImageBrush ImageSource="images/ninja.png" Stretch="Fill"/>
+                                </DiffuseMaterial.Brush>
+                            </DiffuseMaterial>
+                        </GeometryModel3D.Material>
+                    </GeometryModel3D>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D x:Name="AmbientContainer4">
+                <ModelVisual3D.Content>
+                    <AmbientLight x:Name="Ambient4" Color="Gray"/>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D x:Name="DirectionalContainer4">
+                <ModelVisual3D.Content>
+                    <DirectionalLight x:Name="Directional4" Color="#FF7F7F7F" Direction="0,0,-1">
+                        <DirectionalLight.Transform>
+                            <TranslateTransform3D OffsetZ="3" OffsetX="0" OffsetY="0"/>
+                        </DirectionalLight.Transform>
+                    </DirectionalLight>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+        </Viewport3D>
+        <Ellipse x:Name="tam" Margin="0,0,0,433.553" Grid.Row="2" Grid.Column="3" Opacity="0.995" RenderTransformOrigin="0.5,0.5" Fill="Red" Height="12.426" VerticalAlignment="Bottom" OpacityMask="Black" Stroke="White" StrokeThickness="2" HorizontalAlignment="Left" Width="12.426">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Canvas x:Name="Dao" Margin="83.6,0,0,12.7" Grid.Row="2" Height="213.105" VerticalAlignment="Bottom" RenderTransformOrigin="0.22,1.115" HorizontalAlignment="Left" Width="162.158">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="70.367"/>
+                    <TranslateTransform X="-93.292" Y="-129.787"/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Canvas x:Name="canvas_dao" Width="113.406" Height="215.785" Canvas.Top="-1.636" RenderTransformOrigin="0.5,0.5" Canvas.Left="-2.602">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <Ellipse x:Name="tamten" Height="52.594" Width="48.427" Opacity="0.995" StrokeThickness="5" Canvas.Left="34.414" Canvas.Top="8" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <RadialGradientBrush RadiusY="0.641" RadiusX="0.641">
+                            <GradientStop Offset="0" Color="White"/>
+                            <GradientStop Offset="1"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Viewport3D x:Name="phitieu" Height="192.957" Canvas.Left="-67.264" RenderTransformOrigin="0.5,0.5" Canvas.Top="-1.341" Width="235.296">
+                    <Viewport3D.Camera>
+                        <PerspectiveCamera x:Name="perspectiveCamera" FieldOfView="45" FarPlaneDistance="100" LookDirection="-22.821,-12.047,-14.169" NearPlaneDistance="0.1" Position="23.954,12.422,12.035" UpDirection="-0.348,0.912,-0.216">
+                            <PerspectiveCamera.Transform>
+                                <Transform3DGroup>
+                                    <TranslateTransform3D OffsetZ="-1" OffsetX="-0.5" OffsetY="0"/>
+                                    <ScaleTransform3D ScaleZ="1" ScaleY="1" ScaleX="1"/>
+                                    <RotateTransform3D>
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D Axis="0,1,0" Angle="0"/>
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+                                    <TranslateTransform3D OffsetZ="1" OffsetX="0.5" OffsetY="0"/>
+                                    <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                </Transform3DGroup>
+                            </PerspectiveCamera.Transform>
+                        </PerspectiveCamera>
+                    </Viewport3D.Camera>
+                    <Viewport3D.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="128.685"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Viewport3D.RenderTransform>
+                    <ModelVisual3D x:Name="phitieuModelContainer">
+                        <ModelVisual3D.Content>
+                            <GeometryModel3D x:Name="phitieuModel" d:Bounds="-12.1942125699087,-10,0,24.3884251398174,20,0">
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D Normals="0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1
+0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1 0,0,1" Positions="-12.194213,-10,0 -9.4843876,-10,0 -6.7745625,-10,0 -4.0647375,-10,0 -1.3549125,-10,0 1.3549125,-10,0 4.0647375,-10,0 6.7745625,-10,0 9.4843876,-10,0 12.194213,-10,0 -12.194213,-7.7777778,0 -9.4843876,-7.7777778,0 -6.7745625,-7.7777778,0
+-4.0647375,-7.7777778,0 -1.3549125,-7.7777778,0 1.3549125,-7.7777778,0 4.0647375,-7.7777778,0 6.7745625,-7.7777778,0 9.4843876,-7.7777778,0 12.194213,-7.7777778,0 -12.194213,-5.5555556,0 -9.4843876,-5.5555556,0 -6.7745625,-5.5555556,0 -4.0647375,-5.5555556,0 -1.3549125,-5.5555556,0 1.3549125,-5.5555556,0
+4.0647375,-5.5555556,0 6.7745625,-5.5555556,0 9.4843876,-5.5555556,0 12.194213,-5.5555556,0 -12.194213,-3.3333333,0 -9.4843876,-3.3333333,0 -6.7745625,-3.3333333,0 -4.0647375,-3.3333333,0 -1.3549125,-3.3333333,0 1.3549125,-3.3333333,0 4.0647375,-3.3333333,0 6.7745625,-3.3333333,0 9.4843876,-3.3333333,0
+12.194213,-3.3333333,0 -12.194213,-1.1111111,0 -9.4843876,-1.1111111,0 -6.7745625,-1.1111111,0 -4.0647375,-1.1111111,0 -1.3549125,-1.1111111,0 1.3549125,-1.1111111,0 4.0647375,-1.1111111,0 6.7745625,-1.1111111,0 9.4843876,-1.1111111,0 12.194213,-1.1111111,0 -12.194213,1.1111111,0 -9.4843876,1.1111111,0
+-6.7745625,1.1111111,0 -4.0647375,1.1111111,0 -1.3549125,1.1111111,0 1.3549125,1.1111111,0 4.0647375,1.1111111,0 6.7745625,1.1111111,0 9.4843876,1.1111111,0 12.194213,1.1111111,0 -12.194213,3.3333333,0 -9.4843876,3.3333333,0 -6.7745625,3.3333333,0 -4.0647375,3.3333333,0 -1.3549125,3.3333333,0
+1.3549125,3.3333333,0 4.0647375,3.3333333,0 6.7745625,3.3333333,0 9.4843876,3.3333333,0 12.194213,3.3333333,0 -12.194213,5.5555556,0 -9.4843876,5.5555556,0 -6.7745625,5.5555556,0 -4.0647375,5.5555556,0 -1.3549125,5.5555556,0 1.3549125,5.5555556,0 4.0647375,5.5555556,0 6.7745625,5.5555556,0
+9.4843876,5.5555556,0 12.194213,5.5555556,0 -12.194213,7.7777778,0 -9.4843876,7.7777778,0 -6.7745625,7.7777778,0 -4.0647375,7.7777778,0 -1.3549125,7.7777778,0 1.3549125,7.7777778,0 4.0647375,7.7777778,0 6.7745625,7.7777778,0 9.4843876,7.7777778,0 12.194213,7.7777778,0 -12.194213,10,0
+-9.4843876,10,0 -6.7745625,10,0 -4.0647375,10,0 -1.3549125,10,0 1.3549125,10,0 4.0647375,10,0 6.7745625,10,0 9.4843876,10,0 12.194213,10,0" TextureCoordinates="0,84.217 11.410667,84.217 22.821333,84.217 34.232,84.217 45.642667,84.217 57.053333,84.217 68.464,84.217 79.874667,84.217 91.285333,84.217 102.696,84.217 0,74.859556 11.410667,74.859556 22.821333,74.859556 34.232,74.859556 45.642667,74.859556 57.053333,74.859556 68.464,74.859556 79.874667,74.859556 91.285333,74.859556 102.696,74.859556 0,65.502111 11.410667,65.502111 22.821333,65.502111
+34.232,65.502111 45.642667,65.502111 57.053333,65.502111 68.464,65.502111 79.874667,65.502111 91.285333,65.502111 102.696,65.502111 0,56.144667 11.410667,56.144667 22.821333,56.144667 34.232,56.144667 45.642667,56.144667 57.053333,56.144667 68.464,56.144667 79.874667,56.144667 91.285333,56.144667 102.696,56.144667 0,46.787222 11.410667,46.787222 22.821333,46.787222 34.232,46.787222 45.642667,46.787222 57.053333,46.787222
+68.464,46.787222 79.874667,46.787222 91.285333,46.787222 102.696,46.787222 0,37.429778 11.410667,37.429778 22.821333,37.429778 34.232,37.429778 45.642667,37.429778 57.053333,37.429778 68.464,37.429778 79.874667,37.429778 91.285333,37.429778 102.696,37.429778 0,28.072333 11.410667,28.072333 22.821333,28.072333 34.232,28.072333 45.642667,28.072333 57.053333,28.072333 68.464,28.072333 79.874667,28.072333 91.285333,28.072333
+102.696,28.072333 0,18.714889 11.410667,18.714889 22.821333,18.714889 34.232,18.714889 45.642667,18.714889 57.053333,18.714889 68.464,18.714889 79.874667,18.714889 91.285333,18.714889 102.696,18.714889 0,9.3574444 11.410667,9.3574444 22.821333,9.3574444 34.232,9.3574444 45.642667,9.3574444 57.053333,9.3574444 68.464,9.3574444 79.874667,9.3574444 91.285333,9.3574444 102.696,9.3574444 0,0 11.410667,0
+22.821333,0 34.232,0 45.642667,0 57.053333,0 68.464,0 79.874667,0 91.285333,0 102.696,0" TriangleIndices="0 1 10 1 11 10 1 2 11 2 12 11 2 3 12 3 13 12 3 4 13 4 14 13 4 5 14 5 15 14 5 6 15 6 16 15 6 7 16 7 17 16 7 8 17 8 18 17 8 9 18 9 19 18 10 11 20 11 21 20 11 12 21 12 22 21 12 13 22 13 23 22 13 14 23 14 24 23 14 15 24 15 25 24 15 16 25 16 26 25 16 17 26 17 27 26 17 18 27 18 28 27 18 19 28 19 29 28 20 21 30 21 31 30 21 22 31 22 32 31 22 23 32 23 33 32 23 24 33 24 34 33 24 25 34 25 35 34 25 26 35 26 36 35 26 27 36 27 37 36 27 28 37 28 38 37 28 29 38 29 39 38 30 31 40 31 41 40 31 32 41 32 42 41 32 33 42 33 43 42 33 34 43 34 44 43 34 35 44 35 45 44 35 36 45 36 46 45 36 37 46 37 47 46 37 38 47 38 48 47 38 39 48 39 49 48 40 41 50 41 51 50 41 42 51 42 52 51 42 43 52 43 53 52 43 44 53 44 54 53 44 45 54 45 55 54 45 46 55 46 56 55 46 47 56 47 57 56 47 48 57 48 58 57 48 49 58 49 59 58 50 51 60 51 61 60 51 52 61 52 62 61 52 53 62 53 63 62 53 54 63 54 64 63 54 55 64 55 65 64 55 56 65 56 66 65 56 57 66 57 67 66 57 58 67 58 68 67 58 59 68 59 69 68 60 61 70 61 71 70 61 62 71 62 72 71 62 63 72 63 73 72 63 64 73 64 74 73 64 65 74 65 75 74 65 66 75 66 76 75 66 67 76 67 77 76 67 68 77 68 78 77 68 69 78 69 79 78 70 71 80 71 81 80 71 72 81 72 82 81 72 73 82 73 83 82 73 74 83 74 84 83 74 75 84 75 85 84 75 76 85 76 86 85 76 77 86 77 87 86 77 78 87 78 88 87 78 79 88 79 89 88 80 81 90 81 91 90 81 82 91 82 92 91 82 83 92 83 93 92 83 84 93 84 94 93 84 85 94 85 95 94 85 86 95 86 96 95 86 87 96 87 97 96 87 88 97 88 98 97 88 89 98 89 99 98"/>
+                                </GeometryModel3D.Geometry>
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial>
+                                        <DiffuseMaterial.Brush>
+                                            <ImageBrush ImageSource="images/phitieu.png" Stretch="Fill"/>
+                                        </DiffuseMaterial.Brush>
+                                    </DiffuseMaterial>
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                    <ModelVisual3D x:Name="AmbientContainer3">
+                        <ModelVisual3D.Content>
+                            <AmbientLight x:Name="Ambient3" Color="Gray"/>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                    <ModelVisual3D x:Name="DirectionalContainer3">
+                        <ModelVisual3D.Content>
+                            <DirectionalLight x:Name="Directional3" Color="#FF7F7F7F" Direction="0,0,-1">
+                                <DirectionalLight.Transform>
+                                    <TranslateTransform3D OffsetZ="3" OffsetX="0" OffsetY="0"/>
+                                </DirectionalLight.Transform>
+                            </DirectionalLight>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                </Viewport3D>
+            </Canvas>
+        </Canvas>
+        <MediaElement x:Name="INTRO_SOUND_EFFECT_mp3" HorizontalAlignment="Left" Height="0" Stretch="Fill" VerticalAlignment="Top" Width="0" Volume="10"/>
+        <MediaElement x:Name="Pollo_Loko_mp3" HorizontalAlignment="Left" Height="0" Stretch="Fill" VerticalAlignment="Top" Width="0" Volume="100"/>
+        <Canvas x:Name="huongdangame" Grid.Column="3" Height="285.302" Margin="-139.18,0,0,1.2" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="287.68">
+            <Image x:Name="huongdangame1" Source="images/huongdangame.png" Stretch="Fill" Height="285.302" Width="287.68"/>
+            <Rectangle Fill="White" Height="46.7" Width="210.5" Canvas.Left="43.606" Canvas.Top="72.302"/>
+            <TextBlock Height="31.033" TextWrapping="Wrap" Foreground="Red" FontSize="21.333" FontWeight="Bold" Width="244.923" Canvas.Left="25.757" Canvas.Top="84.002"><Run Language="vi-vn" Text="VÒNG QUAY MAY MẮN"/></TextBlock>
+        </Canvas>
+        <TextBlock x:Name="tbldemo" Margin="53.806,0,114,354.773" Grid.Row="2" TextWrapping="Wrap" FontSize="106.667" Grid.ColumnSpan="2" Text="DEMO PLAY" Foreground="White" FontFamily="Bauhaus 93" Height="167.609" VerticalAlignment="Bottom" FontWeight="Bold"/>
+        <Canvas x:Name="bonusbong" Grid.ColumnSpan="4" Margin="0,72.966,296.544,0" RenderTransformOrigin="0.5,0.5" Height="183.768" Grid.Row="2" VerticalAlignment="Top" d:IsHidden="True">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Rectangle Fill="Black" StrokeThickness="4" Opacity="0.525" Height="213.383" Canvas.Left="4.6" Canvas.Top="8" Width="1000.216" RadiusY="30.022" RadiusX="30.022"/>
+
+            <Label x:Name="lblbonus_Copy" Content="Bonus" FontSize="160" FontFamily="Cooper Std Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="165.648" VerticalAlignment="Top" Width="577.925" Canvas.Left="10" Canvas.Top="18.12">
+                <Label.Foreground>
+                    <RadialGradientBrush GradientOrigin="0.005,0.491">
+                        <GradientStop Color="#FFDAFF00" Offset="0"/>
+                        <GradientStop Color="Red"/>
+                    </RadialGradientBrush>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="lblbonus" Content="" FontSize="133.333" Foreground="Red" FontFamily="Cooper Std Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="163.689" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Canvas.Left="559.8" Width="350" Canvas.Top="20.519">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="lblbonus_Copy1" Content="INCREASES EVERY GAME" FontSize="26.667" Foreground="#FF7DFF00" FontFamily="Segoe UI Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="68.419" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Canvas.Left="196.794" Width="584.482" Canvas.Top="152.964" FontWeight="Bold" BorderThickness="2,0,2,2">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <MediaElement x:Name="YAY_mp3" Height="0" Stretch="Fill" Width="0"/>
+        </Canvas>
+        <Canvas x:Name="counting" Grid.ColumnSpan="5" Margin="322.725,28.96,281,553.988" Background="#C1000000" Grid.RowSpan="3" d:IsHidden="True">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" FontSize="80" FontFamily="Segoe UI Black" Foreground="White" Height="124.779" Canvas.Left="42.385" Canvas.Top="18.534" Width="1263.689"><Run Text="Máy Game đang đếm "/><Run Foreground="#FF00FF3E" FontSize="80" FontFamily="Segoe UI Black" Text="t"/><Run Foreground="#FFCE00FF" FontSize="80" FontFamily="Segoe UI Black" Text="i"/><Run Foreground="#FF003EFF" FontSize="80" FontFamily="Segoe UI Black" Text="N"/><Run Foreground="#FFFFF500" FontSize="80" FontFamily="Segoe UI Black" Text="i"/><Run Foreground="#FF003EFF" FontSize="80" FontFamily="Segoe UI Black" Text=" ĐIỂM "/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Height="330.745" Width="629.374" Canvas.Top="147.313" Canvas.Left="354" Foreground="#FFFFDE00"><Run FontSize="80" FontFamily="Segoe UI Black" Text="Các bé  nhớ lấy"/><LineBreak/><Run FontSize="80" FontFamily="Segoe UI Black" Text="    "/><Run Foreground="#FF00FF3E" FontSize="80" FontFamily="Segoe UI Black" Text="t"/><Run Foreground="#FFCE00FF" FontSize="80" FontFamily="Segoe UI Black" Text="i"/><Run Foreground="#FF003EFF" FontSize="80" FontFamily="Segoe UI Black" Text="N"/><Run Foreground="#FFFFF500" FontSize="80" FontFamily="Segoe UI Black" Text="i"/><Run Foreground="#FF003EFF" FontSize="80" FontFamily="Segoe UI Black" Text=" ĐIỂM "/><LineBreak/><Run FontSize="80" FontFamily="Segoe UI Black" Text="để đổi quà nhé!"/></TextBlock>
+            <Path Data="M42.385,143.313 L1276.088,143.313" Height="15" Canvas.Left="42.385" Stretch="Fill" Stroke="#FFB4B4B4" Canvas.Top="136.813" Width="1234.703" StrokeThickness="15"/>
+        </Canvas>
+        <Canvas x:Name="canvashopqua" Grid.Column="4" Margin="58.324,186.66,112.655,306.002" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Background="{DynamicResource ImageBrush1}">
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Rectangle Width="423.985" Stroke="White" StrokeThickness="5" Height="411.298" Canvas.Left="3">
+                <Rectangle.Fill>
+                    <ImageBrush/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="tblhopqua" TextWrapping="Wrap" Width="420.985" FontSize="200" FontWeight="Bold" Foreground="#FF00FF4A" Height="293.423" Canvas.Top="70.627" TextAlignment="Center" Canvas.Left="6"/>
+        </Canvas>
+    </Grid>
+</Window>

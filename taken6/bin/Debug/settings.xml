@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Tickets>
+    <group1>20</group1>
+    <group2>25</group2>
+    <group3>30</group3>
+    <group4>50</group4>
+    <group5>100</group5>
+    <bonus>400</bonus>
+  </Tickets>
+</Root>
